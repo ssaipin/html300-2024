@@ -28,7 +28,6 @@ body {
   justify-content: center;
 }
 h2 {
-  margin-top: 7em;
   font-size: 2.5em;
   @include rainbow-text();  //using mixin 
 }
@@ -36,7 +35,6 @@ h2 {
 // using BEM style
 .pendulum {
   display: block;
-  position: absolute;
   width: 220px;
   height: 180px;
   background-color: $second-bgColor;
@@ -44,26 +42,24 @@ h2 {
   left: 50%;
   border-radius: 5%;
   border: $border;
-  transform: translate(-50%, -50%);
   align-items: center;
 
   &__box {
     display: flex;
-    padding: 120px 0 0 10px;
-    position: absolute;
+    padding: 120px 0 0 10px; //balls and strings inside the box
     flex: 1;
   }
 
   &__ball {
     height: 40px;
     width: 40px;
-    border-radius: 50%;
+    border-radius: 50%; //circle ball
     background-color: $ball-color;
     position: relative;
-    transform-origin: 50% -300%;
+    transform-origin: 50% -300%; //move balls to left and right
 
     &::before {
-      content: '';
+      content: ''; //strings
       width: 2px;
       height: 120px;
       background-color: white;
@@ -71,12 +67,17 @@ h2 {
       top: -120px;
       position: absolute;
     }
-
-    &--first {
+    
+    &--first { //first ball move to the left
       animation: pendulum-ball-first 0.9s alternate ease-in infinite;
     }
 
-    &--last {
+    &--middle { //react a little AFTER first and last ball hit
+      animation: pendulum-ball-middle 1.2s ease-in-out infinite;
+      animation-delay: 0.2s;
+    }
+
+    &--last { //last ball move to the right
       animation: pendulum-ball-last 0.9s alternate ease-out infinite;
     }
   }
@@ -84,19 +85,37 @@ h2 {
 
 @keyframes pendulum-ball-first {
   0% {
-    transform: rotate(35deg);
+    transform: rotate(35deg); //move to the left
   }
   50% {
-    transform: rotate(0deg);
+    transform: rotate(0deg); //move back and stop at second ball
   }
 }
 
 @keyframes pendulum-ball-last {
   50% {
-    transform: rotate(0deg);
+    transform: rotate(0deg); //move to the right
   }
   100% {
-    transform: rotate(-35deg);
+    transform: rotate(-35deg); //ball stop
+  }
+}
+
+@keyframes pendulum-ball-middle { 
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  60% {
+    transform: rotate(-1deg);
+  }
+  80% {
+    transform: rotate(1deg);
+  }
+  90% {
+    transform: rotate(2deg);
   }
 }
 
@@ -111,7 +130,7 @@ h2 {
   box-shadow: 10px 0px 15px rgba(0, 0, 0, 0.1);
   transform-style: preserve-3d;
 
-  &__content {
+  &__content { //inside in card
     width: 80%;
     height: 80%;
     margin: auto;
@@ -152,13 +171,12 @@ h2 {
     border: 1px solid #000;
     background-color: white;
     transform-style: preserve-3d;
-    transform-origin: 0% 50%;
-    transition: all 0.8s ease-in-out;
+    transform-origin: 0% 50%; //card will open to the left (horizotal like opening a card)
+    transition: all 0.8s ease-in-out; //make it smoother
     cursor: pointer;
 
     &--front {
-      backface-visibility: hidden;
-      transform: perspective(800px) rotateY(0deg);
+      backface-visibility: hidden; //hide backface image
     }
 
     &--back {
@@ -168,18 +186,55 @@ h2 {
     }
   }
 
-  &:hover {
+  &:hover { 
+    .confetti { //infinite falling confetti when the card open
+      animation: confetti-fall 1s ease-out infinite;
+    }
+
     .card__face--front {
-      transform: perspective(800px) rotateY(-170deg);
+      transform: perspective(1200px) rotateY(-170deg);
     }
 
     .card__face--back {
-      transform: perspective(800px) rotateY(-170deg);
+      transform: perspective(1200px) rotateY(-170deg);
       box-shadow: 7px 0px 5px rgba(0, 0, 0, 0.3),
                   inset 2px 0px 15px rgba(0, 0, 0, 0.1);
     }
   }
 }
+
+.confetti {
+  position: absolute;
+  top: 0;
+  width: 6px;
+  height: 12px;
+  border-radius: 2px;
+  opacity: 0;
+}
+
+// Different positions/colors using nth-child
+.confetti:nth-child(2)  { left: 10%; background: hotpink; animation-delay: 0s; }
+.confetti:nth-child(3)  { left: 20%; background: gold; animation-delay: 0.1s; }
+.confetti:nth-child(4)  { left: 30%; background: cyan; animation-delay: 0.2s; }
+.confetti:nth-child(5)  { left: 40%; background: lightgreen; animation-delay: 0.3s; }
+.confetti:nth-child(6)  { left: 50%; background: orange; animation-delay: 0.4s; }
+.confetti:nth-child(7)  { left: 60%; background: deepskyblue; animation-delay: 0.5s; }
+.confetti:nth-child(8)  { left: 70%; background: violet; animation-delay: 0.6s; }
+.confetti:nth-child(9)  { left: 80%; background: lime; animation-delay: 0.7s; }
+.confetti:nth-child(10) { left: 90%; background: salmon; animation-delay: 0.8s; }
+.confetti:nth-child(11) { left: 50%; background: red; animation-delay: 0.9s; }
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(150px) rotate(360deg);
+  }
+}
+
 .btn {
   padding: 10px 20px;
   font-size: 1.2rem;
