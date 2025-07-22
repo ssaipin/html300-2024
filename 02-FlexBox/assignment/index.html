@@ -1,18 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="css/style.css" />
-        <title>Assignment 05 - CSS Grid</title>
-    </head>
-    <body>
-        <main class="main">
-          <h2>flex box is neat</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ex. Iure quisquam libero, praesentium soluta minus laudantium minima? Ratione, id non tempore minima ex temporibus sit deserunt possimus nisi sequi.
-            
-          </p>
-        </main>
-    </body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Assignment 02 - CSS Grid</title>
+    <script src="https://kit.fontawesome.com/d04e826a4c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="grid-container">
+
+        <!--HEADER-->
+        <header class="header">
+            <div class="header__left">
+                <span>MyBank</span>
+                <i class="fa-solid fa-piggy-bank"></i>
+            </div>
+            <div class="header__right">
+                <span>Hi, Gao</span>
+                <img src="user-image.png" alt="avatar user image">
+                <a href="#">Log out</a>
+            </div>
+        </header>
+
+        <!--NAV-->
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Accounts</a></li>
+                <li><a href="#">Transfers</a></li>
+                <li><a href="#">Bill Pay</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+
+        <!--SIDEBAR-->
+        <aside class="sidebar">
+            <ul>
+                <li class="sidebar__links"><a href="#">Profile</a></li>
+                <li class="sidebar__links"><a href="#">Transaction History</a></li>
+                <li class="sidebar__links"><a href="#">Notifications</a></li>
+                <li class="sidebar__links"><a href="#">Support</a></li>
+            </ul>
+        </aside>
+
+        <!--MAIN CONTENT-->
+        <main class="main-content">
+            <h1>Welcome, Gao</h1>
+            <section class="account">
+                <div class="account__card">
+                    <h2>Checking Account</h2>
+                    <p>$5,432.10</p>
+                </div>
+                <div class="account__card">
+                    <h2>Saving Account</h2>
+                    <p>$12,345.67</p>
+                </div>
+            </section>
+
+            <section class="transactions">
+                <h2>Recent Transactions</h2>
+                <table>
+                    <thead>
+                        <tr> <!--tr = row-->
+                            <th>Date</th> <!--th = header, bold and center by default-->
+                            <th>Description</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>07/09/2025</td> <!--td = data, regular and left-align by default-->
+                            <td>Grocery Store</td>
+                            <td>−$123.45</td>
+                        </tr>
+                        <tr>
+                            <td>07/08/2025</td>
+                            <td>Paycheck</td>
+                            <td>+$2,500.00</td>
+                        </tr>
+                        <tr>
+                            <td>07/05/2025</td>
+                            <td>Electric Bill</td>
+                            <td>−$88.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>    
+        <!--FOOTER-->
+        <footer class="footer">
+            <p>© 2025 MyBank. All rights reserved.</p>
+        </footer>
+
+        
+    </div>
+</body>
+
 </html>
