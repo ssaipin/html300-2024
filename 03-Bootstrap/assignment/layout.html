@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/d04e826a4c.js" crossorigin="anonymous"></script>
+        <title>Grid Layout</title>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <header class="navbar navbar-expand-md bg-info">
+            <div class="container-fluid"> <!--full width container-->
+                <a class="navbar-brand navbar-dark" href="index.html">Bootstrap</a>
+
+                <!--navbar will shrink (hamburger menu) on smaller screen-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li> 
+                        <li class="nav-item"><a class="nav-link active fw-bold" href="layout.html">Layout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!--This page, I use Bootstrap grid system and use at 3 bootstrap sizes(lg,md,sm)-->
+            <main class="container my-5">
+                <h2 class="mb-4">Checkout Form</h2>
+
+        <!--This row = [Billing & Payment container] + Cart container. Cart reverse only on small screen(cart container will be on top of screen)-->
+                <div class="row g-3 flex-column-reverse flex-sm-row">
+                   
+                    <!--Checkout Form-->
+                    <form class="col-sm-12 col-md-7 col-lg-8"> <!--Billing & Payment container-->
+                        <div class="p-4 bg-light rounded border">
+
+                            <div class="row"> <!--Billing and Payment are in same row-->
+                                <div class="col-md-6"> <!--Billing Section-->
+                                    <h3 class="mb-4">Billing Address</h3>
+                                    <label for="fullName" class="form-label"><i class="fa-solid fa-user"></i> Full Name</label>
+                                    <input type="text" class="form-control mb-3" id="fullName" placeholder="John M. Smith">
+
+                                    <label for="email" class="form-label"><i class="fa-solid fa-envelope"></i> Email</label>
+                                    <input type="email" class="form-control mb-3" id="email">
+
+                                    <label for="address" class="form-label"><i class="fa-solid fa-house"></i> Address</label>
+                                    <input type="text" class="form-control mb-3" id="address">
+
+                                    <label for="city" class="form-label">City</label>
+                                    <input type="text" class="form-control mb-3" id="city">
+
+                                    <div class="row"> <!--State and Zip are in same row-->
+                                        <div class="col-md-6">
+                                            <label for="state" class="form-label">State</label>
+                                            <input type="text" class="form-control mb-3" id="state">                       
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="zip" class="form-label">Zip</label>
+                                            <input type="text" class="form-control mb-3" id="zip">                       
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6"> <!--Payment Section-->
+                                    <h3 class="mb-4">Payment</h3>
+                                    <label class="form-label">Accepted Cards</label>
+                                    <div class="mb-2 fs-3">
+                                        <i class="fa-brands fa-cc-visa text-primary me-2"></i>
+                                        <i class="fa-brands fa-cc-discover text-warning me-2"></i>
+                                        <i class="fa-brands fa-cc-mastercard text-danger me-2"></i>
+                                        <i class="fa-brands fa-cc-apple-pay"></i>
+                                    </div>
+
+                                    <label for="cardName" class="form-label">Name on Card</label>
+                                    <input type="text" class="form-control mb-3" id="cardName">
+
+                                    <label for="ccNumber" class="form-label">Card Number</label>
+                                    <input type="text" class="form-control mb-3" id="ccNumber" placeholder="0000-0000-0000-0000">
+
+                                    <div class="row"> <!--Exp and CVV in same row-->
+                                        <div class="col-md-6">
+                                            <label for="exp" class="form-label">Exp: mm/yy</label>
+                                            <input type="text" class="form-control mb-3" id="exp" placeholder="00/00">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="cvv" class="form-label">CVV</label>
+                                            <input type="text" class="form-control mb-3" id="cvv" placeholder="000">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-check my-3">
+                                <input type="checkbox" class="form-check-input" id="sameAddress" checked>
+                                <label for="sameAddress" class="form-check-label">Shipping address same as billing</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Continue to checkout</button>
+                        </div>
+                    </form>
+
+                    <!--Cart-->
+                    <div class="col-sm-12 col-md-5 col-lg-4"> <!--Cart Container-->
+                        <div class="p-4 bg-light rounded border">
+                            <h4>Cart
+                            <span class="float-end"><i class="fa-solid fa-cart-shopping"></i> 4</span>
+                            </h4>
+
+                            <p><a href="#">Item 1</a> <span class="float-end" text-muted>$15</span></p>
+                            <p><a href="#">Item 2</a> <span class="float-end" text-muted>$8</span></p>
+                            <p><a href="#">Item 3</a> <span class="float-end" text-muted>$5</span></p>
+                            <p><a href="#">Item 4</a> <span class="float-end" text-muted>$2</span></p>
+                            <hr>
+                            <p><b>Total <span class="float-end">$30</b></span></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </main>
+        <footer class="mt-auto text-center bg-info-subtle p-2">
+                &copy 2025 coded by Gao Saipin. All rights reserved.
+        </footer>    
+
+    <!--Bootstrap JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
