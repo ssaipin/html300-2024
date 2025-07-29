@@ -5,11 +5,61 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="stylesheet" href="css/style.css" />
-        <title>Assignment 06 - Bootstrap 4</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <title>Assignment 03 - Bootstrap</title>
     </head>
-    <body>
-        <main class="main">
-          
-        </main>
+    <body class="d-flex flex-column min-vh-100">
+        <header class="navbar navbar-expand-md bg-info"> <!--navbar will expand (show all links) on md screens and larger, collapse on smaller screens.-->
+            <div class="container-fluid"> <!--full width container-->
+                <a class="navbar-brand navbar-dark" href="index.html">Bootstrap</a>
+
+                <!--navbar will shrink (hamburger menu) on smaller screen-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active fw-bold" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="layout.html">Layout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!--Landing Page: I'm using bootstrap5 and that no longer has jumbotron. So I create a similar effect-->
+            <main class="container mt-5 bg-secondary-subtle p-4 rounded">
+                <div class="text-center">
+                    <h1 class="display-4">Welcome to Bootstrap Project</h1>
+                    <p class="lead pt-3">Bootstrap is a free open-source CSS framework directed at responsive and mobile-first front-end web development.</p>
+                    <hr class="my-4">
+                    <p>Explore different Bootstrap components across multiple pages.</p>
+        
+                    <!-- Tooltip applied on the element -->
+                    <a href="https://getbootstrap.com/" 
+                    class="btn btn-primary link-light text-decoration-none mt-2" 
+                    target="_blank" 
+                    data-bs-toggle="tooltip" 
+                    data-bs-placement="right" 
+                    data-bs-custom-class="custom-tooltip"
+                    data-bs-title="Start Exploring">
+                    Learn More</a>
+                </div>
+            </main>
+
+        <footer class="mt-auto text-center bg-info-subtle p-2">
+                &copy 2025 coded by Gao Saipin. All rights reserved.
+        </footer>
+
+        <!--Bootstrap JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>    
+
+        <!-- Tooltip initialization -->
+       <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+       </script>
+               
     </body>
 </html>

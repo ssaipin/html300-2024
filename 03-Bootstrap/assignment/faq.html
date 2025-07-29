@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <title>Accordion</title>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <header class="navbar navbar-expand-md bg-info">
+            <div class="container-fluid"> <!--full width container-->
+                <a class="navbar-brand navbar-dark" href="index.html">Bootstrap</a>
+
+                <!--navbar will shrink (hamburger menu) on smaller screen-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link active fw-bold" href="faq.html">FAQ</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="layout.html">Layout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!--This page will using Bootstrsp accordion component-->
+        <main class="container mt-5">
+            <h1 class="display-4 mb-4">Bootstrap 5 Accordion</h1>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item"> <!--item 1-->
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne">
+                        What is Accordion ?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show"
+                         aria-labelledby="headingOne"
+                         data-bs-parent="#faqAccordion">
+                         <div class="accordion-body">
+                            <strong>Accordion</strong> is a UI (User Interface) component that lets users expand and collapse sections of content.
+                            <a href="https://getbootstrap.com/docs/5.3/components/accordion/">Learn more</a>
+                         </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item"> <!--item 2-->
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        Example Use
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" 
+                         aria-labelledby="headingTwo"
+                         data-bs-parent="#faqAccordion">
+                         <div class="accordion-body">
+                            <ul>
+                                <li>FAQs (Frequently Asked Questions)</li>
+                                <li>Product details (ex. specifications, reviews)</li>
+                                <li>Muti step forms or instructions</li>
+                                <li>Mobile friendly content toggles</li>
+                            </ul>
+                         </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item"> <!--item 3-->
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="flase"
+                        aria-controls="collapseThree">
+                        Why it's useful ?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse"
+                         aria-labelledby="headingThree"
+                         data-bs-parent="#faqAccordion">
+                         <div class="accordion-body">
+                             <ul>
+                                <li>Save space</li>
+                                <li>Keep pages cleaner and more organized</li>
+                                <li>Let users control what they want to see</li>
+                            </ul>
+                            
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    <footer class="mt-auto text-center bg-info-subtle p-2">
+                &copy 2025 coded by Gao Saipin. All rights reserved.
+    </footer>
+
+
+    <!--Bootstrap JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
