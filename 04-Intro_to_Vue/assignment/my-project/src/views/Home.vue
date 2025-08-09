@@ -49,19 +49,6 @@ export default {
       buttonText: 'Learn More',
       learnMoreLink: 'https://getbootstrap.com/',
     }
-  },
-  mounted() {
-    // Initialize Bootstrap tooltips after component mounts
-    this.initializeTooltips()
-  },
-  methods: {
-    initializeTooltips() {
-      // Bootstrap tooltip initialization
-      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      tooltipTriggerList.forEach(tooltipTriggerEl => {
-        new window.bootstrap.Tooltip(tooltipTriggerEl)
-      })
-    }
   }
 }
 </script>
