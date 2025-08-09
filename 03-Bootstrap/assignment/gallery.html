@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <title>Gallery</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header class="navbar navbar-expand-md bg-info">
+            <div class="container-fluid"> <!--full width container-->
+                <a class="navbar-brand navbar-dark" href="index.html">Bootstrap</a>
+
+                <!--navbar will shrink (hamburger menu) on smaller screen-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active fw-bold" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="layout.html">Layout</a></li>
+                    </ul>
+                </div>
+            </div>
+    </header>
+
+    <!--This page will using image bootstrap responsive/fluid images-->
+        <main class="container my-5">
+            <h1 class="display-4 mb-4">Nodoguro Omakase</h1>
+            <p>Nodoguro is a Japanese restaurant in Portland that offers a 25-course kaiseki-style tasting menu, 
+               blending traditional Japanese techniques with seasonal Pacific Northwest ingredients. 
+               The meal progresses from light vegetables and raw seafood to broths, steamed and grilled dishes, and ends with rice and sushi.</p>
+            <p>This was such a wonderful experience. It was my first Japanese omakase experience that wasn't just sushi.
+               All of the dishes were amazing and the sake pairing was lovely. 
+            </p> 
+
+            <h2 class="my-5">Here are some the images of the dishes</h2>  
+
+    <!--Extra Bonut: using carousel slide-->  
+            <div class="carousel-wrapper mx-auto mb-5">    
+                <div id="carouselSlide" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./images/IMG_01.jpeg" class="d-block w-100 rounded" alt="Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./images/IMG_02.jpeg" class="d-block w-100 rounded" alt="Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./images/IMG_03.jpeg" class="d-block w-100 rounded" alt="Image 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./images/IMG_04.jpeg" class="d-block w-100 rounded" alt="Image 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./images/IMG_05.jpeg" class="d-block w-100 rounded" alt="Image 5">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./images/IMG_06.jpeg" class="d-block w-100 rounded" alt="Image 6">
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlide" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselSlide" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="row g-4 text-center">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <img src="./images/IMG_07.jpeg" class="img-fluid rounded w-75" alt="Image 7">
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <img src="./images/IMG_08.jpeg" class="img-fluid rounded w-75" alt="Image 8">
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <img src="./images/IMG_09.jpeg" class="img-fluid rounded w-75" alt="Image 9">
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <img src="./images/IMG_10.jpeg" class="img-fluid rounded w-75" alt="Image 10">
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <img src="./images/IMG_11.jpeg" class="img-fluid rounded w-75" alt="Image 11">
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <img src="./images/IMG_12.jpeg" class="img-fluid rounded w-75" alt="Image 12">
+                </div>
+            </div>
+        </main>
+
+        <!--.col-md-4 = on desktop(≥768px) 12/4 = 3 images per row
+            .col-sm-12 = on tablets(≥576px) 2 image per row
+            .col-xs-12 = on phone(<576px) 1 image per row-->
+
+    <footer class="mt-auto text-center bg-info-subtle p-2">
+                &copy 2025 coded by Gao Saipin. All rights reserved.
+    </footer>    
+
+    <!--Bootstrap JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
