@@ -1,0 +1,16 @@
+$primary: #ff69b4;
+$body-color: #111;
+
+.carousel-wrapper {
+  width: 25%; 
+  max-width: 100%;
+}
+@media (max-width: 575.98px) {
+  .carousel-wrapper {
+  width: 75%; 
+  max-width: 100%;
+}
+}
+
+// Import Bootstrap SCSS
+@import '~bootstrap/scss/bootstrap';
